@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu } from 'antd';
-import { HeartOutlined } from '@ant-design/icons';
+import { HeartOutlined, UserOutlined } from '@ant-design/icons';
+import { Navigate, useNavigate } from 'react-router-dom';
 import './index.css';
 const items = [
    {
@@ -19,16 +20,24 @@ const items = [
     icon: <HeartOutlined />
    },
    {
-    label: '发布商品',
-    key: '123',
-    icon: <HeartOutlined />
+    label: '个人中心',
+    key: 'personalInformation',
+    icon: <UserOutlined />
    }
 
 ];
 const Nav = () => {
+
+  const navigation = useNavigate();
+
   const [current, setCurrent] = useState('mail');
   const onClick = (e) => {
-    setCurrent(e.key);
+    switch( e.key ) {
+      case 'personalInformation':
+        navigation('/main/person');
+        setCurrent(e.key);
+        break;
+    }
   };
   return (
     <>

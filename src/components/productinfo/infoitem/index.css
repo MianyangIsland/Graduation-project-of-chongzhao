@@ -1,0 +1,7 @@
+.info-item{
+    display: inline-block;
+    flex: 0 1 auto;
+    width: 180px;
+    height: 350px;
+    margin: 10px;
+}
