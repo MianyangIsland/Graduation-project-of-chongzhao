@@ -2,11 +2,11 @@ import {Routes, Route} from "react-router-dom";
 import Login from './pages/login';
 import Registered from "./pages/registered";
 import Main from "./pages/main";
-import './App.css';
+import styles from  './App.module.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
        <Routes>
          <Route path="" element={ <Login/>}></Route>
          <Route path="/login" element={ <Login/>}></Route>

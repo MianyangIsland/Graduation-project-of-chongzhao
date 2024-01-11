@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Descriptions, Image } from 'antd';
 import ProductionInfo from "../../components/productinfo";
-import './index.css';
+import styles from  './index.module.css';
 
 const Person  = () => {
 
@@ -42,20 +42,20 @@ const Person  = () => {
     ]
 
     return (
-       <div className="person-container">
-            <div className="message-container">
+       <div className={styles.person_container}>
+            <div className={styles.message_container}>
             <Image
                     width={150}
                     src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
                 />
-                 <div className="user-info">
+                 <div className={styles.user_info}>
                  <Descriptions title="User Info" items={items}/>
                  </div>
             </div>
-            <div className="my-rental-list">
+            <div className={styles.my_rental_list}>
                <ProductionInfo title={'我的租凭'}/>
             </div>
-            <div className="my-hire-list">
+            <div className={styles.my_hire_list}>
                <ProductionInfo title={'我的出租'}/>
             </div>
        </div>

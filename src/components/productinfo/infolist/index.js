@@ -1,6 +1,6 @@
 import React , {useState} from "react";
 import ProductionInfoItem from "../infoitem";
-import './index.css';
+import styles from  './index.module.css';
 
 const ProductInfoList = (props) => {
 
@@ -26,13 +26,13 @@ const ProductInfoList = (props) => {
   ]);
  
   return (
-    <ul className="info-list">
+       <ul className={styles.info_list}>
         {
              messageList.map((item,index) => {
               return <ProductionInfoItem key={item.id}/>
             }) 
         }
-    <li className="list-bottom">暂无数据了哦~~~</li>
+       <li className={styles.list_bottom}>暂无数据了哦~~~</li>
     </ul>
   )
 }

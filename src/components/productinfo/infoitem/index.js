@@ -1,10 +1,10 @@
 import React from "react";
 import { Image } from 'antd';
-import './index.css';
+import styles from  './index.module.css';
 
 const ProductionInfoItem = () => {
     return (
-       <li className="info-item">
+       <li className={styles.info_item}>
            <Image 
              width={180}
              src="https://img14.360buyimg.com/n7/jfs/t1/246709/39/1284/38729/658e904eF44381f0d/5a4d422cd0fb2210.jpg"

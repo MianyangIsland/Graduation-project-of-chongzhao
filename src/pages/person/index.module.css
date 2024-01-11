@@ -5,7 +5,7 @@
     background-color: white;
 }
 
-.message-container{
+.message_container{
     position: absolute;
     display: flex;
     justify-content: space-around;
@@ -17,10 +17,10 @@
     height: 20%;
     border-bottom: 1px solid #CCCCCC;
 }
-.user-info{
+.user_info{
     max-width: 60%;
 }
-.my-rental-list{
+.my_rental_list{
     position: absolute;
     box-sizing: border-box;
     width: 50%;
@@ -29,7 +29,7 @@
     bottom: 0;
     border-right: 1px solid #CCCCCC;
 }
-.my-hire-list{
+.my_hire_list{
     position: absolute;
     width: 50%;
     height: 80%;

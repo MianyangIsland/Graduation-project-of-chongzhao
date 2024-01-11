@@ -1,10 +1,10 @@
-.main-container{
+.main_container{
   position: relative;
   width: 100%;
   height: 100vh;
 }
 
-.main-view{
+.main_view{
   position: absolute;
   width: 100%;
   height: 95vh;
@@ -13,10 +13,9 @@
   overflow: hidden;
 }
 
-.bottom-navigation-bar{
+.bottom_navigation_bar{
   position: absolute;
   height: 5vh;
-  width: 80%;
+  width: 100%;
   bottom: 0;
-  left: 10%;
 }

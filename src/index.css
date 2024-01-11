@@ -22,3 +22,9 @@ code {
   display: none !important;
   content: "";
 }
+
+textarea,textarea.ant-input:hover,textarea:focus{
+  border: 1px solid #DAE2F3;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}

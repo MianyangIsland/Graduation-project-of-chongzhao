@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form, Input } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import './index.css';
+import styles from  './index.module.css';
 
 
 const Registered = () => {
@@ -17,8 +17,8 @@ const Registered = () => {
 
  
    return (
-    <div className='register-container'>
-    <div className='register-form'> 
+    <div className={styles.register_container}>
+    <div className={styles.register_form}> 
     <Form
        name="basic"
        labelCol={{
@@ -70,7 +70,7 @@ const Registered = () => {
            span: 16,
          }}
        >
-         <div className='register-selection'> 
+         <div className={styles.register_selection}> 
          <Button type="primary" htmlType="submit">
            点击注册
          </Button>

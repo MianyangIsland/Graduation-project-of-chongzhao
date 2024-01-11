@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { Button, Form, Input } from 'antd';
-import './index.css';
+import styles from  './index.module.css';
 
 const Login = () => {
 
@@ -18,8 +18,8 @@ const Login = () => {
 
   
    return (
-    <div className='login-container'>
-        <div className='login-form'> 
+    <div className={styles.login_container}>
+        <div className={styles.login_form}> 
         <Form
           name="basic"
           labelCol={{
@@ -71,7 +71,7 @@ const Login = () => {
               span: 16,
             }}
           >
-            <div className='login-selection'>
+            <div className={styles.login_selection}>
             <Button type="primary" htmlType="submit">
               登陆
             </Button>
