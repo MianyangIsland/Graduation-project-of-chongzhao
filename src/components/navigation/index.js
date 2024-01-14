@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu } from 'antd';
-import { HeartOutlined, UserOutlined, WechatOutlined } from '@ant-design/icons';
+import { HeartOutlined, UserOutlined, WechatOutlined , CloudUploadOutlined} from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import styles from  './index.module.css';
 const items = [
@@ -15,9 +15,9 @@ const items = [
       icon: <WechatOutlined />
    },
    {
-    label: '个人中心',
-    key: 'im',
-    icon: <HeartOutlined />
+    label: '社区',
+    key: 'community',
+    icon: <CloudUploadOutlined />
    },
    {
     label: '个人中心',
@@ -45,6 +45,15 @@ const Nav = () => {
       case 'message': 
         navigation('/main/message');
         setCurrent(e.key)
+        break;
+      case 'community':
+        navigation('/main/community');
+        setCurrent(e.key);
+        break;
+      default: 
+        navigation('/main/person');
+        setCurrent('recommend');
+        break;
     }
   };
   return (

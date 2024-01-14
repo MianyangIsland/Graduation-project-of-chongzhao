@@ -5,6 +5,7 @@ import styles from  './index.module.css'
 const Person = React.lazy(() => import('../person'));
 const Recommend = React.lazy(() => import('../recommend'));
 const Message = React.lazy(() => import('../message'));
+const Community = React.lazy(() => import('../community'));
 // 主页面
 const main = () => {
   return (
@@ -16,6 +17,7 @@ const main = () => {
                 <Route path="person" element={<Person/>}></Route>
                 <Route path="recommend" element={<Recommend/>}></Route>
                 <Route path="message" element={<Message/>}></Route>
+                <Route path="community" element={<Community/>}></Route>
             </Routes>
       </Suspense>
       </div>

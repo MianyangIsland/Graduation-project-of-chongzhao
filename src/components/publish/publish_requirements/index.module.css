@@ -1,0 +1,16 @@
+.container{
+   position: absolute;
+   width: 90%;
+   height: 550px;
+   padding-top: 10px;
+}
+.upload_container{
+    position: absolute;
+    left: 15%;
+    width: 85%;
+}
+.pub_btn{
+    position: absolute;
+    right: -15%;
+    bottom: 0;
+}

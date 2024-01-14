@@ -36,3 +36,8 @@
     right: 0;
     bottom: 0;
 }
+.publish_container{
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
