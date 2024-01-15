@@ -1,10 +1,13 @@
 import React , { useState } from "react";
 import { Button, Input, Space, Image} from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+import { useNavigate } from "react-router-dom";
 import styles from  './index.module.css';
 
 
 const Recommend = () => {
+
+    const navigate = useNavigate();
 
     const [inputValue, setInputValue] = useState();
     const onSearch = () => console.log(inputValue);
@@ -110,7 +113,17 @@ const Recommend = () => {
                    {
                     data.map((item, index) => {
                         return (
-                            <li className={styles.products_item} id={index}><Image src={item.src} /></li>
+                            <li 
+                             className={styles.products_item} 
+                             id={item.id} 
+                             onClick={() => navigate('/main/product_details',{
+                                state: {
+                                    id:item.id
+                                }
+                             })}
+                             >
+                                <Image src={item.src} />
+                            </li>
                         )
                     })
                    }

@@ -6,6 +6,7 @@ const Person = React.lazy(() => import('../person'));
 const Recommend = React.lazy(() => import('../recommend'));
 const Message = React.lazy(() => import('../message'));
 const Community = React.lazy(() => import('../community'));
+const ProductDetails = React.lazy(() => import('../productDetails'));
 // 主页面
 const main = () => {
   return (
@@ -18,6 +19,7 @@ const main = () => {
                 <Route path="recommend" element={<Recommend/>}></Route>
                 <Route path="message" element={<Message/>}></Route>
                 <Route path="community" element={<Community/>}></Route>
+                <Route path="product_details" element={<ProductDetails/>}></Route>
             </Routes>
       </Suspense>
       </div>

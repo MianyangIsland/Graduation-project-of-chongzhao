@@ -9,7 +9,7 @@ const Login = () => {
 
   const onFinish = (values) => {
     console.log('Success:', values);
-    navigate('/main')
+    navigate('/main/recommend')
   };
 
   const onFinishFailed = (errorInfo) => {
