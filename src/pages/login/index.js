@@ -1,19 +1,27 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input , message } from 'antd';
 import styles from  './index.module.css';
+import API from '../../api/login';
 
 const Login = () => {
 
   const navigate = useNavigate();
 
-  const onFinish = (values) => {
-    console.log('Success:', values);
-    navigate('/main/recommend')
+  const onFinish = async (values) => {
+    const res = await API.Login(values);
+    const data = JSON.parse(res.data);
+    const {status_code} = data;
+    if( status_code === 0 ) {
+      navigate('/main/recommend')
+    }
   };
 
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
+  const onFinishFailed = () => {
+     message.open({
+      type: 'warning',
+      content: '请完善所有必填项!'
+     })
   };
 
   
@@ -40,8 +48,8 @@ const Login = () => {
           autoComplete="off"
         >
           <Form.Item
-            label="Username"
-            name="username"
+            label="邮箱"
+            name="email"
             rules={[
               {
                 required: true,
@@ -53,7 +61,7 @@ const Login = () => {
           </Form.Item>
 
           <Form.Item
-            label="Password"
+            label="密码"
             name="password"
             rules={[
               {

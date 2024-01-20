@@ -1,9 +1,12 @@
-import React from "react";
-import { Descriptions , Image } from 'antd';
+import React, {useState} from "react";
+import { Button, Descriptions , Image } from 'antd';
 import { useLocation } from "react-router-dom";
+import Comments from "../../components/comments";
 import styles from './index.module.css';
 
 const ProductDetails = () => {
+    const [open, setOpen ] = useState(false); 
+
     const items = [
         {
           key: '1',
@@ -70,6 +73,9 @@ const ProductDetails = () => {
         },
     ]
     const location = useLocation();
+    const CheckOutReviews = () => {
+      setOpen(!open);
+    }
     return (
        <div className={styles.product_details_container}>
            <div className={styles.text_parameters}>
@@ -82,41 +88,14 @@ const ProductDetails = () => {
               })
             }
            </div>
-           <div className={styles.comment_area}>
-             <ul className={styles.comment_list}>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-                 <li className={styles.comment_item}></li>
-
-             </ul>
-           </div>
+          <div className={styles.comments_btn}>
+          <Button 
+              onClick={CheckOutReviews} 
+              type="link">
+                查看评论
+            </Button>
+          </div>
+           <Comments open={open} changeOpen={CheckOutReviews}/>
        </div>
     )
 }
