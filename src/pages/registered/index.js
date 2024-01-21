@@ -54,7 +54,7 @@ const Registered = () => {
            const res = await API.isEnroll(email);
            const data = JSON.parse(res.data);
            const isSuccess = data.data.exist
-           if( isSuccess ) {
+           if( !isSuccess ) {
             getCaptcha(email)
            } else {
             message.open({
@@ -118,9 +118,10 @@ const Registered = () => {
               }
               const res = await API.enrolled(data);
               const val = JSON.parse(res.data);
-             
               const { status_code } = val;
               if( status_code !== 1001 ) {
+                const token = JSON.stringify(data.data.user_token.token).slice(1,-1);
+                sessionStorage.setItem('user_token',token);
                 navigate('/main/recommend');
               } else {
                 message.open({

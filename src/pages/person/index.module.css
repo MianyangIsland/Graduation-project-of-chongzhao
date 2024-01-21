@@ -17,7 +17,14 @@
     height: 20%;
     border-bottom: 1px solid #CCCCCC;
 }
+.user_avatar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .user_info{
+    cursor: pointer;
     max-width: 60%;
 }
 .my_rental_list{

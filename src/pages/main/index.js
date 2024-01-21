@@ -1,12 +1,15 @@
-import React , { Suspense} from "react";
+import React , { Suspense } from "react";
 import { Route , Routes} from "react-router-dom";
 import Nav from '../../components/navigation'
 import styles from  './index.module.css'
+import axios from "axios";
 const Person = React.lazy(() => import('../person'));
 const Recommend = React.lazy(() => import('../recommend'));
 const Message = React.lazy(() => import('../message'));
 const Community = React.lazy(() => import('../community'));
 const ProductDetails = React.lazy(() => import('../productDetails'));
+const user_token = sessionStorage.getItem('user_token')
+axios.defaults.headers.common['Authorization'] = `bearer ${user_token}`;
 // 主页面
 const main = () => {
   return (

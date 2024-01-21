@@ -9,12 +9,20 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onFinish = async (values) => {
-    const res = await API.Login(values);
+     try {
+      const res = await API.Login(values);
     const data = JSON.parse(res.data);
+    const token = JSON.stringify(data.data.user_token.token).slice(1,-1);
+    sessionStorage.setItem('user_token',token);
     const {status_code} = data;
     if( status_code === 0 ) {
       navigate('/main/recommend')
     }
+     } catch(err) {
+      message.open({
+        content:'邮箱/密码错误，请查验！'
+      })
+     }
   };
 
   const onFinishFailed = () => {
