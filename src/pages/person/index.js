@@ -57,16 +57,25 @@ const Person  = () => {
 
    // 获取个人信息
    const getMessage = async () => {
-      const res = await API.GetPersonMsg();
-      const data = JSON.parse(res.data).data;
-      const {avatar, birthday, gender, name, sign} = data;
-      setUserInfo({
-        avatar, 
-        birthday, 
-        gender, 
-        name, 
-        sign
-      })
+      try {
+        const res = await API.GetPersonMsg();
+        console.log(res);
+        const data = JSON.parse(res.data).data;
+        console.log(data);
+        const {avatar, birthday, gender, name, sign} = data;
+        setUserInfo({
+          avatar,
+          birthday, 
+          gender, 
+          name, 
+          sign
+        })
+      } catch(err) {
+        message.open({
+          type:'error',
+          content:'服务器繁忙，请稍后再试'
+        })
+      }
    }
 
    useEffect(() => {

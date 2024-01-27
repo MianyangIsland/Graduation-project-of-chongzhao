@@ -2,6 +2,9 @@
     position: relative;
     width: 100%;
     height: 100%;
+    background-image: url('../../assets/register.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .register_form {
@@ -17,6 +20,7 @@
     border: 1px solid rgb(128, 128, 128);
     border-radius: 20px;
     padding-right: 5%;
+    background: rgb(0, 0, 0, 0.3);
 }
 
 .register_selection{
